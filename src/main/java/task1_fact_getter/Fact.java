@@ -14,8 +14,10 @@ public class Fact {
     public Fact() {}
 
     public Fact(
-            @JsonProperty("id") String id, @JsonProperty("text") String text,
-            @JsonProperty("type") String type, @JsonProperty("user") String user,
+            @JsonProperty("id") String id,
+            @JsonProperty("text") String text,
+            @JsonProperty("type") String type,
+            @JsonProperty("user") String user,
             @JsonProperty("upvotes") int upvotes
     ) {
         this.id = id;

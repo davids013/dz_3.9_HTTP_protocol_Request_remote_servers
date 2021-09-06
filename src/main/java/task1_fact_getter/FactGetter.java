@@ -15,18 +15,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FactGetter {
-    public static ObjectMapper mapper = new ObjectMapper();
+    private static final String REMOTE_ADDRESS =
+            "https://raw.githubusercontent.com/netology-code/jd-homeworks/master/http/task1/cats";
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     public static void main() {
-        final String REMOTE_ADDRESS =
-                "https://raw.githubusercontent.com/netology-code/jd-homeworks/master/http/task1/cats";
-//                "https://jsonplaceholder.typicode.com/posts";
         try (CloseableHttpClient httpClient = HttpClientBuilder
                 .create()
                 .setUserAgent("HTTP_homework_program")
                 .setDefaultRequestConfig(RequestConfig.custom()
-                        .setConnectTimeout(3000)
-                        .setSocketTimeout(10000)
+                        .setConnectTimeout(5000)
+                        .setSocketTimeout(30000)
                         .setRedirectsEnabled(false)
                         .build())
                 .build();
