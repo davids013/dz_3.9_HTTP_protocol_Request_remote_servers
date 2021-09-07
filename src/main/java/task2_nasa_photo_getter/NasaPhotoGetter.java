@@ -7,7 +7,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import task1_fact_getter.Fact;
 
 import java.io.*;
 import java.net.URL;
@@ -35,7 +34,7 @@ public class NasaPhotoGetter {
 
             try (CloseableHttpResponse response = httpClient.execute(request)) {
                 String body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
-                System.out.println(body);
+//                System.out.println(body);
                 final String URL_TAG = "\"url\":\"";
                 String urlString = body.substring(body.indexOf(URL_TAG) + URL_TAG.length());
                 urlString = urlString.substring((0), urlString.indexOf('"'));
