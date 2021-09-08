@@ -42,8 +42,6 @@ public class NasaPhotoGetter {
                 String fileName = urlString.substring(urlString.lastIndexOf('/') + 1);
                 System.out.println(fileName);
                 String filePath = "src" + SEP + "main" + SEP + "resources" + SEP + fileName;
-                body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
-                System.out.println(body);
                 try (
                         BufferedInputStream bis = new BufferedInputStream(url.openStream());
                         FileOutputStream fos = new FileOutputStream(filePath, false)
