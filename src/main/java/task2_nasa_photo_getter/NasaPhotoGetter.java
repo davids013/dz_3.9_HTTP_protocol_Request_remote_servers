@@ -34,7 +34,6 @@ public class NasaPhotoGetter {
 
             try (CloseableHttpResponse response = httpClient.execute(request)) {
                 String body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
-//                System.out.println(body);
                 final String URL_TAG = "\"url\":\"";
                 String urlString = body.substring(body.indexOf(URL_TAG) + URL_TAG.length());
                 urlString = urlString.substring((0), urlString.indexOf('"'));
@@ -43,12 +42,8 @@ public class NasaPhotoGetter {
                 String fileName = urlString.substring(urlString.lastIndexOf('/') + 1);
                 System.out.println(fileName);
                 String filePath = "src" + SEP + "main" + SEP + "resources" + SEP + fileName;
-
-                request = new HttpGet(urlString);
-                request.setHeader(HttpHeaders.ACCEPT, ContentType.IMAGE_JPEG.getMimeType());
                 body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
                 System.out.println(body);
-
                 try (
                         BufferedInputStream bis = new BufferedInputStream(url.openStream());
                         FileOutputStream fos = new FileOutputStream(filePath, false)
