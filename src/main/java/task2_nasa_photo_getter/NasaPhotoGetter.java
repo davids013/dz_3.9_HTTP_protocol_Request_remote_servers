@@ -15,10 +15,11 @@ import java.nio.charset.StandardCharsets;
 public class NasaPhotoGetter {
     private static final String REMOTE_ADDRESS_WO_KEY = "https://api.nasa.gov/planetary/apod?api_key=";
     private static final String MY_KEY = "Tr3U8q9msL9nXZ6LdNs18MzzfUSGesfGUgebb7qr";
+    final static String REMOTE_ADDRESS = REMOTE_ADDRESS_WO_KEY + MY_KEY;
     private static final String SEP = File.separator;
 
     public static void main() {
-        final String REMOTE_ADDRESS = REMOTE_ADDRESS_WO_KEY + MY_KEY;
+        System.out.println("\n\tЗадание 2*.Чтение данных API NASA");
         try (CloseableHttpClient httpClient = HttpClientBuilder
                 .create()
                 .setUserAgent("HTTP_homework_program")

@@ -20,6 +20,7 @@ public class FactGetter {
     private static final ObjectMapper mapper = new ObjectMapper();
 
     public static void main() {
+        System.out.println("\tЗадание 1.Запрос на получение списка фактов о кошках");
         try (CloseableHttpClient httpClient = HttpClientBuilder
                 .create()
                 .setUserAgent("HTTP_homework_program")
