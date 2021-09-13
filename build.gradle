@@ -22,6 +22,9 @@ dependencies {
 //    useJUnitPlatform()
 //}
 
+// Установка кодировки для принятых данных (в Maven не требуется)
+compileJava.options.encoding = 'UTF-8'
+
 configurations {
     jar.archiveName = "HTTP_homework.jar"
 }
